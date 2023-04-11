@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   next()
 })
 //Cors Configuration - End
-//app.use(cors())
+app.use(cors())
 app.use('/api/user', userRouter)
 app.use('/api/actor', actorRouter)
 app.use('/api/movie', movieRouter)
