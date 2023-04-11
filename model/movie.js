@@ -35,10 +35,6 @@ const movieSchema = mongoose.Schema(
       required: true,
       enum: genres,
     },
-    tags: {
-      type: [String],
-      required: true,
-    },
     cast: [
       {
         actor: { type: mongoose.Schema.Types.ObjectId, ref: 'Actor' },

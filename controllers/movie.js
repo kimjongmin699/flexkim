@@ -45,7 +45,7 @@ exports.createMovie = async (req, res) => {
     status,
     type,
     genres,
-    tags,
+
     cast,
     writers,
     trailer,
@@ -59,7 +59,7 @@ exports.createMovie = async (req, res) => {
     status,
     type,
     genres,
-    tags,
+
     cast,
     trailer,
     language,
@@ -136,7 +136,7 @@ exports.updateMovieWithoutPoster = async (req, res) => {
     status,
     type,
     genres,
-    tags,
+
     cast,
     writers,
     trailer,
@@ -145,7 +145,6 @@ exports.updateMovieWithoutPoster = async (req, res) => {
 
   movie.title = title
   movie.storyLine = storyLine
-  movie.tags = tags
   movie.releaseDate = releaseDate
   movie.status = status
   movie.type = type
@@ -188,7 +187,7 @@ exports.updateMovie = async (req, res) => {
     status,
     type,
     genres,
-    tags,
+
     cast,
     writers,
     trailer,
@@ -197,7 +196,6 @@ exports.updateMovie = async (req, res) => {
 
   movie.title = title
   movie.storyLine = storyLine
-  movie.tags = tags
   movie.releseDate = releseDate
   movie.status = status
   movie.type = type
@@ -350,7 +348,6 @@ exports.getMovieForUpdate = async (req, res) => {
       type: movie.type,
       language: movie.language,
       genres: movie.genres,
-      tags: movie.tags,
       director: formatActor(movie.director),
       writers: movie.writers.map((w) => formatActor(w)),
       cast: movie.cast.map((c) => {
@@ -436,7 +433,6 @@ exports.getSingleMovie = async (req, res) => {
     director,
     releseDate,
     genres,
-    tags,
     language,
     poster,
     trailer,
@@ -450,7 +446,6 @@ exports.getSingleMovie = async (req, res) => {
       storyLine,
       releseDate,
       genres,
-      tags,
       language,
       type,
       poster: poster?.url,

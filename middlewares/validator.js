@@ -69,16 +69,7 @@ exports.validateMovie = [
   //     }
   //     return true
   //   }),
-  check('tags')
-    .isArray({ min: 1 })
-    .withMessage('Tags must be an array of strings!')
-    .custom((tags) => {
-      for (let tag of tags) {
-        if (typeof tag !== 'string')
-          throw Error('Tags must be an array of strings!')
-      }
-      return true
-    }),
+
   check('cast')
     .isArray()
     .withMessage('Cast must be an array of objects!')
