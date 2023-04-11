@@ -480,7 +480,7 @@ exports.getRelatedMovie = async (req, res) => {
   const movie = await Movie.findById(movieId)
 
   const movies = await Movie.aggregate(
-    relatedMovieAggregation(movie.tags, movie._id)
+    relatedMovieAggregation(movie.title, movie._id)
   )
 
   const mapMovies = async (m) => {
