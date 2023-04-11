@@ -425,7 +425,7 @@ exports.getSingleMovie = async (req, res) => {
   //   reviews.reviewCount = reviewCount
   // }
 
-  const reviews = await getAverageRating(movie._id)
+  const reviews = await getAverageRating(movie?._id)
 
   const {
     _id: id,
