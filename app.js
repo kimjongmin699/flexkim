@@ -18,7 +18,16 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 //Cors Configuration - End
-app.use(cors())
+app.use(
+  cors({
+    origin: [
+      'http://https//64352a71e46e092caea46d6f--benevolent-toffee-de958a.netlify.app/',
+    ],
+    methods: ['GET', 'POST', 'DELETE', 'PUT'],
+    credentials: true,
+    origin: true,
+  })
+)
 app.use('/api/user', userRouter)
 app.use('/api/actor', actorRouter)
 app.use('/api/movie', movieRouter)
