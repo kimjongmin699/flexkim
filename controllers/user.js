@@ -213,11 +213,11 @@ exports.signIn = async (req, res) => {
     const { _id, name, isVerified, role } = user
 
     const jwtToken = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
-      expiresIn: '7d',
+      expiresIn: '30d',
     })
 
     res.json({
-      user: { id: _id, name, email, role, token: jwtToken, isVerified },
+      user: { id: _id, name, email, role, token: jwtToken },
     })
   } catch (error) {
     console.log(error)

@@ -18,7 +18,6 @@ const router = express.Router()
 router.post(
   '/create',
   isAuth,
-  isAdmin,
   uploadImage.single('avatar'),
   actorInfoValidator,
   validate,
@@ -28,7 +27,6 @@ router.post(
 router.post(
   '/update/:actorId',
   isAuth,
-  isAdmin,
   uploadImage.single('avatar'),
   actorInfoValidator,
   validate,

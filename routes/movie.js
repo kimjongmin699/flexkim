@@ -28,7 +28,7 @@ const router = express.Router()
 router.post(
   '/upload-trailer',
   isAuth,
-  isAdmin,
+
   uploadVideo.single('video'),
   uploadTrailer
 )
@@ -36,7 +36,7 @@ router.post(
 router.post(
   '/create',
   isAuth,
-  isAdmin,
+
   uploadImage.single('poster'),
   parseData,
   validateMovie,
@@ -57,7 +57,7 @@ router.post(
 router.patch(
   '/update/:movieId',
   isAuth,
-  isAdmin,
+
   uploadImage.single('poster'),
   parseData,
   validateMovie,
