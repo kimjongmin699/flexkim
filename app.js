@@ -12,6 +12,8 @@ const dotenv = require('dotenv')
 const { handleNotFound } = require('./utils/helper')
 dotenv.config()
 
+const PORT = process.env.PORT || 80
+
 const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
@@ -30,6 +32,6 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message || err })
 })
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 80, () => {
   console.log('server is running')
 })
