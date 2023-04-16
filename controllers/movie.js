@@ -309,7 +309,7 @@ exports.removeMovie = async (req, res) => {
 }
 
 exports.getMovies = async (req, res) => {
-  const { pageNo = 0, limit = 7 } = req.query
+  const { pageNo = 0, limit = 50 } = req.query
 
   const movies = await Movie.find({})
     .sort({ createdAt: -1 })
@@ -381,7 +381,7 @@ exports.searchMovies = async (req, res) => {
 }
 
 exports.getLatestUploads = async (req, res) => {
-  const { limit = 5 } = req.query
+  const { limit = 7 } = req.query
 
   const results = await Movie.find({ status: 'public' })
     .sort('-createdAt')

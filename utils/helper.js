@@ -156,7 +156,7 @@ exports.topRatedMoviesPipline = (type) => {
       },
     },
     {
-      $limit: 7,
+      $limit: 50,
     },
   ]
 }
